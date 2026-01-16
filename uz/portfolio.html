@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Paradise Accessories</title>
+    <link rel="alternate" hreflang="ru" href="./portfolio.html">
+    <link rel="alternate" hreflang="uz" href="../uz/portfolio.html">
+    <link rel="alternate" hreflang="en" href="../en/portfolio.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="./index.html" class="logo">Paradise<span>.</span></a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="./index.html" class="nav-link">Главная</a></li>
+                    <li><a href="./about.html" class="nav-link">О компании</a></li>
+                    <li><a href="./catalog.html" class="nav-link">Продукция</a></li>
+                    <li><a href="./portfolio.html" class="nav-link active">Портфолио</a></li>
+                    <li><a href="./pricing.html" class="nav-link">Цены</a></li>
+                    <li><a href="./contactshtml" class="nav-link">Контакты</a></li>
+                    <li class="language-switcher" id="languageSwitcher">
+                        <button class="current-lang">🇷🇺 <span>RU</span></button>
+                        <div class="language-dropdown" id="languageDropdown"></div>
+                    </li>
+                    <li><a href="#contact" class="btn btn-primary">Запросить расчёт</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section section-light" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <h1>Портфолио наших работ</h1>
+                <p>Примеры реализованных проектов для наших клиентов</p>
+            </div>
+
+            <div class="portfolio-gallery">
+                <!-- Содержимое загружается динамически из CMS через assets/js/portfolio.js -->
+                <!-- Для редактирования портфолио: http://localhost:8000/admin/content/portfolioitem/ -->
+            </div>
+
+            <div style="margin-top: var(--space-3xl); text-align: center;">
+                <p style="color: var(--color-text-secondary);">
+                    Готовы увидеть ваш бренд в нашем портфолио?
+                </p>
+                <a href="./contacts.html" class="btn btn-primary btn-large" style="margin-top: var(--space-lg);">Начать
+                    проект</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" class="lightbox-image" src="" alt="">
+        </div>
+        <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)">‹</button>
+        <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)">›</button>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Paradise Accessories</h3>
+                    <p>Производитель премиальных бирок, этикеток и аксессуа для одежды.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Меню</h3>
+                    <p><a href="./index.html">Главная</a><br><a href="./about.html">О компании</a><br><a
+                            href="./catalog.html">Продукция</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><a href="tel:+998901234567">+998 90 123 45 67</a><br><a
+                            href="mailto:info@paradise-acc.uz">info@paradise-acc.uz</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2016-2026 Paradise Accessories | <a href="./privacy.html" style="color: inherit;">Политика
+                        конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/portfolio.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
