@@ -1,0 +1,17 @@
+# Paradise Accessories - robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://paradise-acc.uz/sitemap.xml
+
+# Block admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all assets
+Allow: /assets/
+
+# Crawl-delay for politeness
+Crawl-delay: 1
