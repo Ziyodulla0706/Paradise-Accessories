@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 export function Footer() {
   const t = useTranslations('nav');
   const tCommon = useTranslations('common');
+  const tFooter = useTranslations('footer');
 
   return (
     <footer className="bg-graphite dark:bg-dark-bg-primary text-white dark:text-dark-text-primary py-12">
@@ -21,7 +22,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Навигация</h4>
+            <h4 className="font-semibold mb-4">{tFooter('navigation')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-400 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-text-primary transition-colors">
@@ -46,7 +47,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Информация</h4>
+            <h4 className="font-semibold mb-4">{tFooter('information')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/pricing" className="text-gray-400 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-text-primary transition-colors">
@@ -61,7 +62,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Контакты</h4>
+            <h4 className="font-semibold mb-4">{tFooter('contacts')}</h4>
             <ul className="space-y-2 text-gray-400 dark:text-dark-text-secondary">
               <li>+998 90 123 45 67</li>
               <li>info@paradise-accessories.uz</li>
@@ -69,7 +70,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-700 dark:border-dark-border pt-8 text-center text-gray-400 dark:text-dark-text-secondary">
-          <p>&copy; {new Date().getFullYear()} Paradise Accessories. Все права защищены.</p>
+          <p>&copy; {new Date().getFullYear()} Paradise Accessories. {tFooter('rights')}</p>
         </div>
       </div>
     </footer>

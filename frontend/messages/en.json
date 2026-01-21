@@ -65,7 +65,67 @@
       "printed": "Printed labels",
       "hangTags": "Hang tags",
       "stickers": "Stickers",
+      "embroidery": "Embroidered Patches",
+      "careLabels": "Care Labels",
+      "custom": "Custom Solution",
       "other": "Other"
+    },
+    "multiStepForm": {
+      "subtitle": "Get a detailed quote in 3 simple steps",
+      "steps": {
+        "product": "Product",
+        "project": "Project",
+        "contact": "Contact",
+        "review": "Review"
+      },
+      "step1": {
+        "title": "Step 1: What do you need?",
+        "mostPopular": "Most Popular",
+        "next": "Next: Project Details"
+      },
+      "step2": {
+        "title": "Step 2: Tell us about your project",
+        "back": "← Back",
+        "quantity": "Quantity *",
+        "quantityPlaceholder": "e.g. 5000",
+        "size": "Size",
+        "sizePlaceholder": "e.g. 50mm x 30mm",
+        "colors": "Colors",
+        "colorsPlaceholder": "e.g. 3 colors",
+        "deadline": "Deadline *",
+        "uploadDesign": "Upload Design Files (optional)",
+        "uploadText": "Click to upload or drag and drop",
+        "uploadFormats": "PDF, AI, EPS, PNG up to 10MB",
+        "next": "Next: Contact Information"
+      },
+      "step3": {
+        "title": "Step 3: How can we reach you?",
+        "back": "← Back",
+        "name": "Name *",
+        "company": "Company *",
+        "email": "Email *",
+        "phone": "Phone *",
+        "preferredContact": "Preferred Contact Method",
+        "additionalMessage": "Additional Message",
+        "review": "Review & Submit"
+      },
+      "step4": {
+        "title": "Step 4: Review and Submit",
+        "edit": "← Edit",
+        "product": "Product:",
+        "quantity": "Quantity:",
+        "size": "Size:",
+        "contact": "Contact:",
+        "thankYou": "Thank you!",
+        "quoteMessage": "We'll send you a detailed quote within 24 hours.",
+        "submitting": "Submitting...",
+        "submitQuote": "Submit Quote Request"
+      },
+      "contactMethods": {
+        "email": "Email",
+        "phone": "Phone",
+        "whatsapp": "WhatsApp"
+      }
     }
   },
   "about": {
@@ -166,6 +226,125 @@
     "cta": {
       "title": "Ready to start cooperation?",
       "subtitle": "Fill out the form and we will calculate the exact cost of your order"
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "information": "Information",
+    "contacts": "Contacts",
+    "rights": "All rights reserved"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our labels and services",
+    "questions": {
+      "productionCapacity": {
+        "question": "What's your production capacity?",
+        "answer": "We have a production capacity of 5 million labels per month. Our state-of-the-art facility operates 24/7 with multiple production lines to ensure we can meet both small and large orders efficiently."
+      },
+      "rushOrders": {
+        "question": "Do you offer rush orders?",
+        "answer": "Yes, we offer express production with 3-day turnaround available at a 40% premium. Our standard production time is 7-10 business days, but we can accommodate urgent orders for customers who need faster delivery."
+      },
+      "fileFormats": {
+        "question": "What file formats do you accept?",
+        "answer": "We accept AI (Adobe Illustrator), PDF, EPS, and PNG files with specifications. For best results, we recommend vector formats (AI, EPS, PDF) at 300 DPI or higher. Our design team can also help convert your files if needed."
+      },
+      "pantoneColors": {
+        "question": "Can you match Pantone colors exactly?",
+        "answer": "Yes, using our computerized color matching system, we can match Pantone colors accurately to delta E <1.5. We maintain a comprehensive Pantone library and can provide color proofs before production begins."
+      },
+      "defectPolicy": {
+        "question": "What's your defect replacement policy?",
+        "answer": "We offer 100% replacement for any manufacturing defects found within 90 days of delivery. Our quality control process includes multiple inspection stages, resulting in a 99.8% quality rate. If you find any defects, contact us immediately for replacement."
+      },
+      "internationalShipping": {
+        "question": "Do you ship internationally?",
+        "answer": "Yes, we ship to 50+ countries worldwide using trusted carriers like DHL and FedEx. All international shipments include full tracking information. Shipping costs and delivery times vary by destination and can be calculated at checkout."
+      },
+      "moq": {
+        "question": "What is your minimum order quantity (MOQ)?",
+        "answer": "Our flexible MOQ starts at just 500 pieces, making us accessible for both small businesses and large enterprises. However, we offer better pricing for larger quantities, with discounts starting at 1,000 pieces."
+      },
+      "samples": {
+        "question": "Can you provide samples before production?",
+        "answer": "Yes, we offer free sample packs for the first 50 requests each month. Samples typically include our most popular materials and finishes so you can feel the quality before placing your order. Samples are shipped within 3-5 business days."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "Our Capabilities",
+    "subtitle": "Complete range of labeling solutions for your brand",
+    "from": "From",
+    "perPiece": "/piece",
+    "contactUs": "Contact us",
+    "viewExamples": "View 50+ Examples",
+    "features": {
+      "woven": {
+        "title": "Woven Labels",
+        "price": "From $0.15/piece",
+        "features": ["Up to 12 colors", "Premium materials", "Custom sizes"]
+      },
+      "printed": {
+        "title": "Printed Labels",
+        "price": "From $0.08/piece",
+        "features": ["Unlimited colors", "High resolution", "Quick turnaround"]
+      },
+      "embroidery": {
+        "title": "Embroidered Patches",
+        "price": "From $1.50/piece",
+        "features": ["3D effects", "Metallic thread", "Custom shapes"]
+      },
+      "hangTags": {
+        "title": "Hang Tags",
+        "price": "From $0.20/piece",
+        "features": ["Cardboard/plastic", "Custom printing", "Strings included"]
+      },
+      "careLabels": {
+        "title": "Care Labels",
+        "price": "From $0.05/piece",
+        "features": ["Wash instructions", "Material info", "Multiple languages"]
+      },
+      "custom": {
+        "title": "Custom Solutions",
+        "price": "Contact us",
+        "features": ["Unique designs", "Special materials", "Volume discounts"]
+      }
+    }
+  },
+  "calculator": {
+    "title": "Interactive Price Calculator",
+    "subtitle": "Get instant pricing for your order",
+    "perPiece": "piece",
+    "step1": {
+      "title": "Step 1: Select Product Type",
+      "from": "From"
+    },
+    "step2": {
+      "title": "Step 2: Enter Quantity",
+      "back": "← Back",
+      "quantity": "Quantity:",
+      "quantityBreaks": "Quantity Breaks:",
+      "off": "% off",
+      "estimatedUnitPrice": "Estimated Unit Price:",
+      "youSave": "You save",
+      "discount": "% discount",
+      "calculateTotal": "Calculate Total Price"
+    },
+    "step3": {
+      "title": "Price Breakdown",
+      "edit": "← Edit",
+      "unitPrice": "Unit Price",
+      "units": "units",
+      "subtotal": "Subtotal:",
+      "setupFee": "Setup Fee:",
+      "discount": "Discount",
+      "total": "Total:",
+      "getDetailedQuote": "Get Detailed Quote via Email",
+      "orderSamples": "Order Samples",
+      "speakWithSpecialist": "Speak with Specialist",
+      "enterEmail": "Enter your email",
+      "sendQuoteToEmail": "Send Quote to Email"
     }
   }
 }

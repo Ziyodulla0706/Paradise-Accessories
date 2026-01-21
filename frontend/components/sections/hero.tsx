@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
-// import Image from 'next/image'; // TODO: Раскомментировать после добавления изображений
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -87,17 +87,13 @@ export function Hero() {
             transition={{ duration: 0.3 }}
           >
             <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-2xl flex items-center justify-center">
-                <span className="text-6xl">🏷️</span>
-              </div>
-              {/* TODO: Заменить на реальное изображение после копирования в public/images/ */}
-              {/* <Image
-                src="/images/hero_clothing_label_1768222853423.png"
-                alt="Paradise Accessories"
+              <Image
+                src="/images/hero_clothing_label.png"
+                alt={tCommon('companyName')}
                 fill
-                className="object-cover"
+                className="object-cover rounded-2xl"
                 priority
-              /> */}
+              />
             </div>
           </motion.div>
         </motion.div>

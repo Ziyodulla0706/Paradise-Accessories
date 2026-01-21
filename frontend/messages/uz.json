@@ -65,7 +65,67 @@
       "printed": "Bosma etiketlar",
       "hangTags": "Osiladigan yorliqlar",
       "stickers": "Stikerkalar",
+      "embroidery": "Tikilgan yamalar",
+      "careLabels": "Parvarish etiketlari",
+      "custom": "Individual yechim",
       "other": "Boshqa"
+    },
+    "multiStepForm": {
+      "subtitle": "3 ta oddiy qadamda batafsil hisob-kitob oling",
+      "steps": {
+        "product": "Mahsulot",
+        "project": "Loyiha",
+        "contact": "Kontakt",
+        "review": "Ko'rib chiqish"
+      },
+      "step1": {
+        "title": "Qadam 1: Sizga nima kerak?",
+        "mostPopular": "Mashhur",
+        "next": "Keyingi: Loyiha tafsilotlari"
+      },
+      "step2": {
+        "title": "Qadam 2: Loyihangiz haqida ayting",
+        "back": "← Orqaga",
+        "quantity": "Miqdor *",
+        "quantityPlaceholder": "masalan, 5000",
+        "size": "O'lcham",
+        "sizePlaceholder": "masalan, 50mm x 30mm",
+        "colors": "Ranglar",
+        "colorsPlaceholder": "masalan, 3 rang",
+        "deadline": "Muddat *",
+        "uploadDesign": "Dizayn fayllarini yuklash (ixtiyoriy)",
+        "uploadText": "Yuklash uchun bosing yoki faylni sudrab tashlang",
+        "uploadFormats": "PDF, AI, EPS, PNG 10MB gacha",
+        "next": "Keyingi: Kontakt ma'lumotlari"
+      },
+      "step3": {
+        "title": "Qadam 3: Siz bilan qanday bog'lanishimiz mumkin?",
+        "back": "← Orqaga",
+        "name": "Ism *",
+        "company": "Kompaniya *",
+        "email": "Email *",
+        "phone": "Telefon *",
+        "preferredContact": "Afzal ko'rilgan aloqa usuli",
+        "additionalMessage": "Qo'shimcha xabar",
+        "review": "Ko'rib chiqish va yuborish"
+      },
+      "step4": {
+        "title": "Qadam 4: Ko'rib chiqish va yuborish",
+        "edit": "← Tahrirlash",
+        "product": "Mahsulot:",
+        "quantity": "Miqdor:",
+        "size": "O'lcham:",
+        "contact": "Kontakt:",
+        "thankYou": "Rahmat!",
+        "quoteMessage": "Biz 24 soat ichida sizga batafsil hisob-kitob yuboramiz.",
+        "submitting": "Yuborilmoqda...",
+        "submitQuote": "Hisob-kitob so'rovini yuborish"
+      },
+      "contactMethods": {
+        "email": "Email",
+        "phone": "Telefon",
+        "whatsapp": "WhatsApp"
+      }
     }
   },
   "about": {
@@ -166,6 +226,125 @@
     "cta": {
       "title": "Hamkorlikni boshlashga tayyormisiz?",
       "subtitle": "Formani to'ldiring va biz buyurtmangizning aniq narxini hisoblaymiz"
+    }
+  },
+  "footer": {
+    "navigation": "Navigatsiya",
+    "information": "Ma'lumot",
+    "contacts": "Kontaktlar",
+    "rights": "Barcha huquqlar himoyalangan"
+  },
+  "faq": {
+    "title": "Tez-tez so'raladigan savollar",
+    "subtitle": "Bizning etiketlar va xizmatlarimiz haqida bilishingiz kerak bo'lgan hamma narsa",
+    "questions": {
+      "productionCapacity": {
+        "question": "Ishlab chiqarish quvvatingiz qanday?",
+        "answer": "Bizda oyiga 5 million etiket ishlab chiqarish quvvati bor. Bizning zamonaviy ishlab chiqarishimiz 24/7 ishlaydi va bir nechta ishlab chiqarish liniyalari bilan kichik va katta buyurtmalarni samarali bajarishni ta'minlaydi."
+      },
+      "rushOrders": {
+        "question": "Shoshilinch buyurtmalarni taklif qilasizmi?",
+        "answer": "Ha, biz 40% qo'shimcha to'lov bilan 3 kunlik muddatda ekspress ishlab chiqarishni taklif qilamiz. Bizning standart ishlab chiqarish muddati 7-10 ish kuni, lekin biz tezroq yetkazib berishni talab qiladigan mijozlar uchun shoshilinch buyurtmalarni bajarishimiz mumkin."
+      },
+      "fileFormats": {
+        "question": "Qanday fayl formatlarini qabul qilasiz?",
+        "answer": "Biz AI (Adobe Illustrator), PDF, EPS va PNG fayllarni texnik xususiyatlar bilan qabul qilamiz. Eng yaxshi natijalar uchun biz 300 DPI yoki undan yuqori vektor formatlarini (AI, EPS, PDF) tavsiya qilamiz. Bizning dizayn jamoamiz kerak bo'lsa, fayllaringizni konvertatsiya qilishda ham yordam bera oladi."
+      },
+      "pantoneColors": {
+        "question": "Pantone ranglarini aniq moslashtira olasizmi?",
+        "answer": "Ha, bizning kompyuterlashtirilgan rang moslashtirish tizimimizdan foydalanib, biz Pantone ranglarini delta E <1.5 aniqlikda moslashtira olamiz. Biz to'liq Pantone kutubxonasini saqlaymiz va ishlab chiqarish boshlanishidan oldin rang namunalarini taqdim etishimiz mumkin."
+      },
+      "defectPolicy": {
+        "question": "Nuqsonlarni almashtirish siyosatingiz qanday?",
+        "answer": "Biz yetkazib berishdan keyin 90 kun ichida topilgan har qanday ishlab chiqarish nuqsonlari uchun 100% almashtirishni taklif qilamiz. Bizning sifat nazorati jarayonimiz bir nechta tekshirish bosqichlarini o'z ichiga oladi, bu 99.8% sifat darajasini ta'minlaydi. Agar siz har qanday nuqsonlarni topsangiz, almashtirish uchun darhol biz bilan bog'laning."
+      },
+      "internationalShipping": {
+        "question": "Xalqaro yetkazib berasizmi?",
+        "answer": "Ha, biz DHL va FedEx kabi ishonchli tashuvchilardan foydalanib, dunyo bo'ylab 50 dan ortiq mamlakatlarga yetkazib beramiz. Barcha xalqaro yuborishlar to'liq kuzatuv ma'lumotlarini o'z ichiga oladi. Yetkazib berish narxlari va muddatlari manzilga qarab farq qiladi va buyurtma berishda hisoblanishi mumkin."
+      },
+      "moq": {
+        "question": "Minimal buyurtma miqdori (MOQ) qanday?",
+        "answer": "Bizning moslashuvchan MOQ 500 donadan boshlanadi, bu bizni kichik bizneslar va yirik korxonalar uchun ham mavjud qiladi. Biroq, biz katta miqdordagi buyurtmalar uchun yaxshiroq narxlarni taklif qilamiz, 1000 donadan boshlanadigan chegirmalar bilan."
+      },
+      "samples": {
+        "question": "Ishlab chiqarishdan oldin namunalar taqdim eta olasizmi?",
+        "answer": "Ha, biz har oy birinchi 50 ta so'rov uchun bepul namuna to'plamlarini taklif qilamiz. Namunalar odatda bizning eng mashhur materiallarimiz va qoplamalarimizni o'z ichiga oladi, shuning uchun siz buyurtma berishdan oldin sifatni his qilishingiz mumkin. Namunalar 3-5 ish kunida yuboriladi."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "Bizning imkoniyatlarimiz",
+    "subtitle": "Brendingiz uchun to'liq etiketlash yechimlari",
+    "from": "Dan",
+    "perPiece": "/dona",
+    "contactUs": "Biz bilan bog'laning",
+    "viewExamples": "50+ misolni ko'rish",
+    "features": {
+      "woven": {
+        "title": "Tikilgan etiketlar",
+        "price": "Dan $0.15/dona",
+        "features": ["12 tagacha rang", "Premium materiallar", "Individual o'lchamlar"]
+      },
+      "printed": {
+        "title": "Bosma etiketlar",
+        "price": "Dan $0.08/dona",
+        "features": ["Cheksiz ranglar", "Yuqori aniqlik", "Tez bajarish"]
+      },
+      "embroidery": {
+        "title": "Tikilgan yamalar",
+        "price": "Dan $1.50/dona",
+        "features": ["3D effektlar", "Metall ip", "Individual shakllar"]
+      },
+      "hangTags": {
+        "title": "Osiladigan yorliqlar",
+        "price": "Dan $0.20/dona",
+        "features": ["Karton/plastik", "Individual bosib chiqarish", "Ip bilan birga"]
+      },
+      "careLabels": {
+        "title": "Parvarish etiketlari",
+        "price": "Dan $0.05/dona",
+        "features": ["Yuvish ko'rsatmalari", "Material ma'lumoti", "Bir nechta tillar"]
+      },
+      "custom": {
+        "title": "Individual yechimlar",
+        "price": "Biz bilan bog'laning",
+        "features": ["Noyob dizaynlar", "Maxsus materiallar", "Hajmli chegirmalar"]
+      }
+    }
+  },
+  "calculator": {
+    "title": "Interaktiv narx kalkulyatori",
+    "subtitle": "Buyurtmangiz uchun darhol narx oling",
+    "perPiece": "dona",
+    "step1": {
+      "title": "Qadam 1: Mahsulot turini tanlang",
+      "from": "Dan"
+    },
+    "step2": {
+      "title": "Qadam 2: Miqdorni kiriting",
+      "back": "← Orqaga",
+      "quantity": "Miqdor:",
+      "quantityBreaks": "Miqdorli chegirmalar:",
+      "off": "% chegirma",
+      "estimatedUnitPrice": "Taxminiy birlik narxi:",
+      "youSave": "Siz tejaysiz",
+      "discount": "% chegirma",
+      "calculateTotal": "Umumiy narxni hisoblash"
+    },
+    "step3": {
+      "title": "Narx tafsilotlari",
+      "edit": "← Tahrirlash",
+      "unitPrice": "Birlik narxi",
+      "units": "birlik",
+      "subtotal": "Oraliq jami:",
+      "setupFee": "Sozlash to'lovi:",
+      "discount": "Chegirma",
+      "total": "Jami:",
+      "getDetailedQuote": "Email orqali batafsil hisob-kitob olish",
+      "orderSamples": "Namuna buyurtma qilish",
+      "speakWithSpecialist": "Mutaxassis bilan gaplashish",
+      "enterEmail": "Emailingizni kiriting",
+      "sendQuoteToEmail": "Hisob-kitobni emailga yuborish"
     }
   }
 }

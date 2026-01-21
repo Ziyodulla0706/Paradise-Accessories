@@ -6,42 +6,44 @@ import { useTranslations } from 'next-intl';
 
 type Step = 'product' | 'project' | 'contact' | 'review';
 
-const productTypes = [
-  {
-    key: 'woven',
-    icon: '🧵',
-    label: 'Woven Labels',
-    badge: 'Most Popular',
-  },
-  {
-    key: 'printed',
-    icon: '🖨️',
-    label: 'Printed Labels',
-  },
-  {
-    key: 'hangTags',
-    icon: '🏷️',
-    label: 'Hang Tags',
-  },
-  {
-    key: 'embroidery',
-    icon: '✨',
-    label: 'Embroidered Patches',
-  },
-  {
-    key: 'careLabels',
-    icon: '📋',
-    label: 'Care Labels',
-  },
-  {
-    key: 'custom',
-    icon: '🎨',
-    label: 'Custom Solution',
-  },
-];
-
 export function MultiStepForm() {
   const t = useTranslations('contact');
+  const tForm = useTranslations('contact.multiStepForm');
+  const tTypes = useTranslations('contact.productTypes');
+  
+  const productTypes = [
+    {
+      key: 'woven',
+      icon: '🧵',
+      label: tTypes('woven'),
+      badge: tForm('step1.mostPopular'),
+    },
+    {
+      key: 'printed',
+      icon: '🖨️',
+      label: tTypes('printed'),
+    },
+    {
+      key: 'hangTags',
+      icon: '🏷️',
+      label: tTypes('hangTags'),
+    },
+    {
+      key: 'embroidery',
+      icon: '✨',
+      label: tTypes('embroidery'),
+    },
+    {
+      key: 'careLabels',
+      icon: '📋',
+      label: tTypes('careLabels'),
+    },
+    {
+      key: 'custom',
+      icon: '🎨',
+      label: tTypes('custom'),
+    },
+  ];
   const [step, setStep] = useState<Step>('product');
   const [formData, setFormData] = useState({
     productType: '',
@@ -103,7 +105,7 @@ export function MultiStepForm() {
               {t('title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
-              Get a detailed quote in 3 simple steps
+              {tForm('subtitle')}
             </p>
           </div>
 
@@ -128,7 +130,7 @@ export function MultiStepForm() {
                     )}
                   </div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center">
-                    {s === 'product' ? 'Product' : s === 'project' ? 'Project' : s === 'contact' ? 'Contact' : 'Review'}
+                    {tForm(`steps.${s}`)}
                   </div>
                 </div>
                 {index < 3 && (
@@ -155,7 +157,7 @@ export function MultiStepForm() {
                   className="space-y-6"
                 >
                   <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50 mb-4">
-                    Step 1: What do you need?
+                    {tForm('step1.title')}
                   </h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {productTypes.map((product) => (
@@ -185,7 +187,7 @@ export function MultiStepForm() {
                     disabled={!canProceed()}
                     className="w-full px-6 py-3 bg-gold-800 hover:bg-gold-900 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-colors"
                   >
-                    Next: Project Details
+                    {tForm('step1.next')}
                   </button>
                 </motion.div>
               )}
@@ -200,58 +202,58 @@ export function MultiStepForm() {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50">
-                      Step 2: Tell us about your project
+                      {tForm('step2.title')}
                     </h3>
                     <button
                       onClick={() => setStep('product')}
                       className="text-sm text-gray-600 dark:text-gray-400 hover:text-navy-950 dark:hover:text-gray-50"
                     >
-                      ← Back
+                      {tForm('step2.back')}
                     </button>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Quantity *
+                        {tForm('step2.quantity')}
                       </label>
                       <input
                         type="number"
                         min="500"
                         value={formData.quantity}
                         onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                        placeholder="e.g. 5000"
+                        placeholder={tForm('step2.quantityPlaceholder')}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-navy-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-800 bg-white dark:bg-navy-950"
                         required
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Size
+                        {tForm('step2.size')}
                       </label>
                       <input
                         type="text"
                         value={formData.size}
                         onChange={(e) => setFormData({ ...formData, size: e.target.value })}
-                        placeholder="e.g. 50mm x 30mm"
+                        placeholder={tForm('step2.sizePlaceholder')}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-navy-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-800 bg-white dark:bg-navy-950"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Colors
+                        {tForm('step2.colors')}
                       </label>
                       <input
                         type="text"
                         value={formData.colors}
                         onChange={(e) => setFormData({ ...formData, colors: e.target.value })}
-                        placeholder="e.g. 3 colors"
+                        placeholder={tForm('step2.colorsPlaceholder')}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-navy-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-800 bg-white dark:bg-navy-950"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Deadline *
+                        {tForm('step2.deadline')}
                       </label>
                       <input
                         type="date"
@@ -265,7 +267,7 @@ export function MultiStepForm() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Upload Design Files (optional)
+                      {tForm('step2.uploadDesign')}
                     </label>
                     <div className="border-2 border-dashed border-gray-300 dark:border-navy-700 rounded-lg p-8 text-center">
                       <input
@@ -279,10 +281,10 @@ export function MultiStepForm() {
                         htmlFor="file-upload"
                         className="cursor-pointer text-gold-800 hover:text-gold-900 font-medium"
                       >
-                        Click to upload or drag and drop
+                        {tForm('step2.uploadText')}
                       </label>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                        PDF, AI, EPS, PNG up to 10MB
+                        {tForm('step2.uploadFormats')}
                       </p>
                       {formData.file && (
                         <p className="text-sm text-green-600 dark:text-green-400 mt-2">
@@ -297,7 +299,7 @@ export function MultiStepForm() {
                     disabled={!canProceed()}
                     className="w-full px-6 py-3 bg-gold-800 hover:bg-gold-900 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-colors"
                   >
-                    Next: Contact Information
+                    {tForm('step2.next')}
                   </button>
                 </motion.div>
               )}
@@ -312,20 +314,20 @@ export function MultiStepForm() {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50">
-                      Step 3: How can we reach you?
+                      {tForm('step3.title')}
                     </h3>
                     <button
                       onClick={() => setStep('project')}
                       className="text-sm text-gray-600 dark:text-gray-400 hover:text-navy-950 dark:hover:text-gray-50"
                     >
-                      ← Back
+                      {tForm('step3.back')}
                     </button>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Name *
+                        {tForm('step3.name')}
                       </label>
                       <input
                         type="text"
@@ -337,7 +339,7 @@ export function MultiStepForm() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Company *
+                        {tForm('step3.company')}
                       </label>
                       <input
                         type="text"
@@ -349,7 +351,7 @@ export function MultiStepForm() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Email *
+                        {tForm('step3.email')}
                       </label>
                       <input
                         type="email"
@@ -361,7 +363,7 @@ export function MultiStepForm() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Phone *
+                        {tForm('step3.phone')}
                       </label>
                       <input
                         type="tel"
@@ -373,21 +375,21 @@ export function MultiStepForm() {
                     </div>
                     <div className="md:col-span-2">
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Preferred Contact Method
+                        {tForm('step3.preferredContact')}
                       </label>
                       <select
                         value={formData.preferredContact}
                         onChange={(e) => setFormData({ ...formData, preferredContact: e.target.value })}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-navy-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-800 bg-white dark:bg-navy-950"
                       >
-                        <option value="email">Email</option>
-                        <option value="phone">Phone</option>
-                        <option value="whatsapp">WhatsApp</option>
+                        <option value="email">{tForm('contactMethods.email')}</option>
+                        <option value="phone">{tForm('contactMethods.phone')}</option>
+                        <option value="whatsapp">{tForm('contactMethods.whatsapp')}</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Additional Message
+                        {tForm('step3.additionalMessage')}
                       </label>
                       <textarea
                         rows={4}
@@ -403,7 +405,7 @@ export function MultiStepForm() {
                     disabled={!canProceed()}
                     className="w-full px-6 py-3 bg-gold-800 hover:bg-gold-900 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-colors"
                   >
-                    Review & Submit
+                    {tForm('step3.review')}
                   </button>
                 </motion.div>
               )}
@@ -418,35 +420,35 @@ export function MultiStepForm() {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50">
-                      Step 4: Review and Submit
+                      {tForm('step4.title')}
                     </h3>
                     <button
                       onClick={() => setStep('contact')}
                       className="text-sm text-gray-600 dark:text-gray-400 hover:text-navy-950 dark:hover:text-gray-50"
                     >
-                      ← Edit
+                      {tForm('step4.edit')}
                     </button>
                   </div>
 
                   <div className="bg-gray-50 dark:bg-navy-900 rounded-lg p-6 space-y-4">
                     <div>
-                      <strong className="text-navy-950 dark:text-gray-50">Product:</strong>{' '}
+                      <strong className="text-navy-950 dark:text-gray-50">{tForm('step4.product')}</strong>{' '}
                       <span className="text-gray-700 dark:text-gray-300">
                         {productTypes.find((p) => p.key === formData.productType)?.label}
                       </span>
                     </div>
                     <div>
-                      <strong className="text-navy-950 dark:text-gray-50">Quantity:</strong>{' '}
+                      <strong className="text-navy-950 dark:text-gray-50">{tForm('step4.quantity')}</strong>{' '}
                       <span className="text-gray-700 dark:text-gray-300">{formData.quantity}</span>
                     </div>
                     {formData.size && (
                       <div>
-                        <strong className="text-navy-950 dark:text-gray-50">Size:</strong>{' '}
+                        <strong className="text-navy-950 dark:text-gray-50">{tForm('step4.size')}</strong>{' '}
                         <span className="text-gray-700 dark:text-gray-300">{formData.size}</span>
                       </div>
                     )}
                     <div>
-                      <strong className="text-navy-950 dark:text-gray-50">Contact:</strong>{' '}
+                      <strong className="text-navy-950 dark:text-gray-50">{tForm('step4.contact')}</strong>{' '}
                       <span className="text-gray-700 dark:text-gray-300">
                         {formData.name} ({formData.email})
                       </span>
@@ -457,10 +459,10 @@ export function MultiStepForm() {
                     <div className="text-center py-8">
                       <div className="text-6xl mb-4">✓</div>
                       <h4 className="text-2xl font-semibold text-green-600 dark:text-green-400 mb-2">
-                        Thank you!
+                        {tForm('step4.thankYou')}
                       </h4>
                       <p className="text-gray-600 dark:text-gray-400">
-                        We'll send you a detailed quote within 24 hours.
+                        {tForm('step4.quoteMessage')}
                       </p>
                     </div>
                   ) : (
@@ -469,7 +471,7 @@ export function MultiStepForm() {
                       disabled={isSubmitting}
                       className="w-full px-6 py-3 bg-gold-800 hover:bg-gold-900 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-colors"
                     >
-                      {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
+                      {isSubmitting ? tForm('step4.submitting') : tForm('step4.submitQuote')}
                     </button>
                   )}
                 </motion.div>

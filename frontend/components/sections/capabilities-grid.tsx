@@ -4,59 +4,65 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 
-const capabilities = [
-  {
-    key: 'woven',
-    icon: '🧵',
-    title: 'Woven Labels',
-    price: 'From $0.15/piece',
-    features: ['Up to 12 colors', 'Premium materials', 'Custom sizes'],
-    gradient: 'from-blue-600 to-blue-800',
-  },
-  {
-    key: 'printed',
-    icon: '🖨️',
-    title: 'Printed Labels',
-    price: 'From $0.08/piece',
-    features: ['Unlimited colors', 'High resolution', 'Quick turnaround'],
-    gradient: 'from-purple-600 to-purple-800',
-  },
-  {
-    key: 'embroidery',
-    icon: '✨',
-    title: 'Embroidered Patches',
-    price: 'From $1.50/piece',
-    features: ['3D effects', 'Metallic thread', 'Custom shapes'],
-    gradient: 'from-green-600 to-green-800',
-  },
-  {
-    key: 'hangTags',
-    icon: '🏷️',
-    title: 'Hang Tags',
-    price: 'From $0.20/piece',
-    features: ['Cardboard/plastic', 'Custom printing', 'Strings included'],
-    gradient: 'from-orange-600 to-orange-800',
-  },
-  {
-    key: 'careLabels',
-    icon: '📋',
-    title: 'Care Labels',
-    price: 'From $0.05/piece',
-    features: ['Wash instructions', 'Material info', 'Multiple languages'],
-    gradient: 'from-red-600 to-red-800',
-  },
-  {
-    key: 'custom',
-    icon: '🎨',
-    title: 'Custom Solutions',
-    price: 'Contact us',
-    features: ['Unique designs', 'Special materials', 'Volume discounts'],
-    gradient: 'from-indigo-600 to-indigo-800',
-  },
-];
-
 export function CapabilitiesGrid() {
-  const t = useTranslations('catalog');
+  const t = useTranslations('capabilities');
+  
+  const getFeatures = (key: string): string[] => {
+    // next-intl doesn't support array access directly, so we'll use raw translations
+    const featuresRaw = t.raw(`features.${key}.features`) as string[];
+    return featuresRaw || [];
+  };
+  
+  const capabilities = [
+    {
+      key: 'woven',
+      icon: '🧵',
+      title: t('features.woven.title'),
+      price: t('features.woven.price'),
+      features: getFeatures('woven'),
+      gradient: 'from-blue-600 to-blue-800',
+    },
+    {
+      key: 'printed',
+      icon: '🖨️',
+      title: t('features.printed.title'),
+      price: t('features.printed.price'),
+      features: getFeatures('printed'),
+      gradient: 'from-purple-600 to-purple-800',
+    },
+    {
+      key: 'embroidery',
+      icon: '✨',
+      title: t('features.embroidery.title'),
+      price: t('features.embroidery.price'),
+      features: getFeatures('embroidery'),
+      gradient: 'from-green-600 to-green-800',
+    },
+    {
+      key: 'hangTags',
+      icon: '🏷️',
+      title: t('features.hangTags.title'),
+      price: t('features.hangTags.price'),
+      features: getFeatures('hangTags'),
+      gradient: 'from-orange-600 to-orange-800',
+    },
+    {
+      key: 'careLabels',
+      icon: '📋',
+      title: t('features.careLabels.title'),
+      price: t('features.careLabels.price'),
+      features: getFeatures('careLabels'),
+      gradient: 'from-red-600 to-red-800',
+    },
+    {
+      key: 'custom',
+      icon: '🎨',
+      title: t('features.custom.title'),
+      price: t('features.custom.price'),
+      features: getFeatures('custom'),
+      gradient: 'from-indigo-600 to-indigo-800',
+    },
+  ];
 
   return (
     <section className="py-12 bg-white dark:bg-navy-900">
@@ -68,10 +74,10 @@ export function CapabilitiesGrid() {
           className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy-950 dark:text-gray-50 mb-2">
-            Our Capabilities
+            {t('title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Complete range of labeling solutions for your brand
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -113,7 +119,7 @@ export function CapabilitiesGrid() {
                   href={`/catalog?category=${capability.key}`}
                   className="text-sm font-medium text-gold-800 dark:text-gold-600 hover:text-gold-900 dark:hover:text-gold-500 inline-flex items-center gap-2 group-hover:gap-3 transition-all"
                 >
-                  View 50+ Examples
+                  {t('viewExamples')}
                   <span>→</span>
                 </Link>
               </div>

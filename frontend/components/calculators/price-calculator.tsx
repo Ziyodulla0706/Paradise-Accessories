@@ -7,13 +7,6 @@ import { useTranslations } from 'next-intl';
 type ProductType = 'woven' | 'printed' | 'hangTags' | 'embroidery';
 type Step = 'type' | 'specs' | 'quantity' | 'result';
 
-const productTypes = [
-  { key: 'woven' as ProductType, label: 'Woven Labels', icon: '🧵', basePrice: 0.15 },
-  { key: 'printed' as ProductType, label: 'Printed Labels', icon: '🖨️', basePrice: 0.08 },
-  { key: 'hangTags' as ProductType, label: 'Hang Tags', icon: '🏷️', basePrice: 0.20 },
-  { key: 'embroidery' as ProductType, label: 'Embroidered Patches', icon: '✨', basePrice: 1.50 },
-];
-
 const quantityBreaks = [
   { min: 500, max: 999, discount: 0 },
   { min: 1000, max: 2499, discount: 0.05 },
@@ -24,6 +17,16 @@ const quantityBreaks = [
 ];
 
 export function PriceCalculator() {
+  const t = useTranslations('calculator');
+  const tTypes = useTranslations('contact.productTypes');
+  
+  const productTypes = [
+    { key: 'woven' as ProductType, label: tTypes('woven'), icon: '🧵', basePrice: 0.15 },
+    { key: 'printed' as ProductType, label: tTypes('printed'), icon: '🖨️', basePrice: 0.08 },
+    { key: 'hangTags' as ProductType, label: tTypes('hangTags'), icon: '🏷️', basePrice: 0.20 },
+    { key: 'embroidery' as ProductType, label: tTypes('embroidery'), icon: '✨', basePrice: 1.50 },
+  ];
+  
   const [step, setStep] = useState<Step>('type');
   const [productType, setProductType] = useState<ProductType | null>(null);
   const [quantity, setQuantity] = useState(1000);
@@ -65,10 +68,10 @@ export function PriceCalculator() {
             className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy-950 dark:text-gray-50 mb-2">
-              Interactive Price Calculator
+              {t('title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
-              Get instant pricing for your order
+              {t('subtitle')}
             </p>
           </motion.div>
 
@@ -101,7 +104,7 @@ export function PriceCalculator() {
                     className="space-y-6"
                   >
                     <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50 mb-4">
-                      Step 1: Select Product Type
+                      {t('step1.title')}
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       {productTypes.map((product) => (
@@ -122,7 +125,7 @@ export function PriceCalculator() {
                             {product.label}
                           </div>
                           <div className="text-sm text-gray-600 dark:text-gray-400">
-                            From ${product.basePrice}/piece
+                            {t('step1.from')} ${product.basePrice}/{t('calculator.perPiece')}
                           </div>
                         </button>
                       ))}
@@ -140,20 +143,20 @@ export function PriceCalculator() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50">
-                        Step 2: Enter Quantity
+                        {t('step2.title')}
                       </h3>
                       <button
                         onClick={handleBack}
                         className="text-sm text-gray-600 dark:text-gray-400 hover:text-navy-950 dark:hover:text-gray-50"
                       >
-                        ← Back
+                        {t('step2.back')}
                       </button>
                     </div>
 
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                          Quantity: <span className="font-bold text-navy-950 dark:text-gray-50">{quantity.toLocaleString()}</span>
+                          {t('step2.quantity')} <span className="font-bold text-navy-950 dark:text-gray-50">{quantity.toLocaleString()}</span>
                         </label>
                         <input
                           type="range"
@@ -173,7 +176,7 @@ export function PriceCalculator() {
                       {/* Quantity breaks */}
                       <div className="bg-gray-50 dark:bg-navy-900 rounded-lg p-4">
                         <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                          Quantity Breaks:
+                          {t('step2.quantityBreaks')}
                         </div>
                         <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
                           {quantityBreaks.map((tier, i) => (
@@ -190,7 +193,7 @@ export function PriceCalculator() {
                                 {tier.max !== Infinity && `-${tier.max.toLocaleString()}`}
                               </div>
                               <div className="text-xs opacity-75">
-                                {tier.discount * 100}% off
+                                {tier.discount * 100}{t('step2.off')}
                               </div>
                             </div>
                           ))}
@@ -200,14 +203,14 @@ export function PriceCalculator() {
                       <div className="pt-4">
                         <div className="bg-gold-50 dark:bg-gold-900/20 border border-gold-200 dark:border-gold-800 rounded-lg p-4 mb-4">
                           <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                            Estimated Unit Price:
+                            {t('step2.estimatedUnitPrice')}
                           </div>
                           <div className="text-2xl font-bold text-gold-800">
                             ${unitPrice.toFixed(3)}
                           </div>
                           {discount > 0 && (
                             <div className="text-sm text-green-600 dark:text-green-400 mt-1">
-                              You save ${savings.toFixed(2)} ({discount * 100}% discount)
+                              {t('step2.youSave')} ${savings.toFixed(2)} ({discount * 100}{t('step2.discount')})
                             </div>
                           )}
                         </div>
@@ -216,7 +219,7 @@ export function PriceCalculator() {
                           onClick={handleNext}
                           className="w-full px-6 py-3 bg-gold-800 hover:bg-gold-900 text-white rounded-lg font-semibold transition-colors"
                         >
-                          Calculate Total Price
+                          {t('step2.calculateTotal')}
                         </button>
                       </div>
                     </div>
@@ -233,39 +236,39 @@ export function PriceCalculator() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-2xl font-semibold text-navy-950 dark:text-gray-50">
-                        Price Breakdown
+                        {t('step3.title')}
                       </h3>
                       <button
                         onClick={handleBack}
                         className="text-sm text-gray-600 dark:text-gray-400 hover:text-navy-950 dark:hover:text-gray-50"
                       >
-                        ← Edit
+                        {t('step3.edit')}
                       </button>
                     </div>
 
                     <div className="space-y-4">
                       <div className="flex justify-between text-gray-600 dark:text-gray-400">
-                        <span>Unit Price ({quantity.toLocaleString()} units):</span>
-                        <span>${unitPrice.toFixed(3)}/unit</span>
+                        <span>{t('step3.unitPrice')} ({quantity.toLocaleString()} {t('step3.units')}):</span>
+                        <span>${unitPrice.toFixed(3)}/{t('step3.units')}</span>
                       </div>
                       <div className="flex justify-between text-gray-600 dark:text-gray-400">
-                        <span>Subtotal:</span>
+                        <span>{t('step3.subtotal')}</span>
                         <span>${subtotal.toFixed(2)}</span>
                       </div>
                       {setupFee > 0 && (
                         <div className="flex justify-between text-gray-600 dark:text-gray-400">
-                          <span>Setup Fee:</span>
+                          <span>{t('step3.setupFee')}</span>
                           <span>${setupFee.toFixed(2)}</span>
                         </div>
                       )}
                       {discount > 0 && (
                         <div className="flex justify-between text-green-600 dark:text-green-400">
-                          <span>Discount ({discount * 100}%):</span>
+                          <span>{t('step3.discount')} ({discount * 100}%):</span>
                           <span>-${savings.toFixed(2)}</span>
                         </div>
                       )}
                       <div className="border-t border-gray-200 dark:border-navy-700 pt-4 flex justify-between text-xl font-bold text-navy-950 dark:text-gray-50">
-                        <span>Total:</span>
+                        <span>{t('step3.total')}</span>
                         <span className="text-gold-800">${total.toFixed(2)}</span>
                       </div>
                     </div>
@@ -276,14 +279,14 @@ export function PriceCalculator() {
                           onClick={() => setShowEmail(true)}
                           className="w-full px-6 py-3 bg-navy-950 dark:bg-navy-800 hover:bg-navy-900 dark:hover:bg-navy-700 text-white rounded-lg font-semibold transition-colors mb-3"
                         >
-                          Get Detailed Quote via Email
+                          {t('step3.getDetailedQuote')}
                         </button>
                         <div className="flex gap-3">
                           <button className="flex-1 px-6 py-3 bg-gold-800 hover:bg-gold-900 text-white rounded-lg font-semibold transition-colors">
-                            Order Samples
+                            {t('step3.orderSamples')}
                           </button>
                           <button className="flex-1 px-6 py-3 border-2 border-navy-950 dark:border-gray-300 text-navy-950 dark:text-gray-50 rounded-lg font-semibold transition-colors hover:bg-gray-50 dark:hover:bg-navy-800">
-                            Speak with Specialist
+                            {t('step3.speakWithSpecialist')}
                           </button>
                         </div>
                       </div>
@@ -295,11 +298,11 @@ export function PriceCalculator() {
                       >
                         <input
                           type="email"
-                          placeholder="Enter your email"
+                          placeholder={t('step3.enterEmail')}
                           className="w-full px-4 py-3 border border-gray-300 dark:border-navy-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-800 bg-white dark:bg-navy-950 text-navy-950 dark:text-gray-50"
                         />
                         <button className="w-full px-6 py-3 bg-gold-800 hover:bg-gold-900 text-white rounded-lg font-semibold transition-colors">
-                          Send Quote to Email
+                          {t('step3.sendQuoteToEmail')}
                         </button>
                       </motion.div>
                     )}
