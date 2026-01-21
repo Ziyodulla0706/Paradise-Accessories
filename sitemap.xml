@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Russian Pages -->
+    <url>
+        <loc>https://paradise-acc.uz/ru/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://paradise-acc.uz/ru/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/about.html"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/about.html"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://paradise-acc.uz/ru/catalog.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/catalog.html"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/catalog.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/catalog.html"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://paradise-acc.uz/ru/portfolio.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/portfolio.html"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/portfolio.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/portfolio.html"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://paradise-acc.uz/ru/pricing.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/pricing.html"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/pricing.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/pricing.html"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://paradise-acc.uz/ru/contacts.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/contacts.html"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/contacts.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/contacts.html"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://paradise-acc.uz/ru/privacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/privacy.html"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Uzbek Pages -->
+    <url>
+        <loc>https://paradise-acc.uz/uz/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- English Pages -->
+    <url>
+        <loc>https://paradise-acc.uz/en/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://paradise-acc.uz/ru/"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://paradise-acc.uz/uz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://paradise-acc.uz/en/"/>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+</urlset>
