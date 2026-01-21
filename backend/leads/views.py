@@ -9,8 +9,12 @@ from django_ratelimit.decorators import ratelimit
 from django.http import HttpResponse
 from django.db.models import Count, Q
 from django.utils import timezone
+from django.db import transaction
 from datetime import timedelta
 import csv
+import logging
+
+logger = logging.getLogger('leads')
 
 from .models import Lead
 from .serializers import (
@@ -30,12 +34,15 @@ class LeadViewSet(viewsets.ModelViewSet):
     
     Provides CRUD operations for leads with filtering, searching, and ordering.
     """
-    queryset = Lead.objects.all()
     permission_classes = [IsAuthenticated]
     filterset_fields = ['status', 'product_type', 'language', 'created_at']
     search_fields = ['name', 'company', 'phone', 'email', 'message']
     ordering_fields = ['created_at', 'updated_at', 'status', 'name', 'company']
     ordering = ['-created_at']
+    
+    def get_queryset(self):
+        """Optimize queryset with select_related for better performance."""
+        return Lead.objects.all().select_related().order_by('-created_at')
     
     def get_serializer_class(self):
         """Return appropriate serializer based on action."""
@@ -176,47 +183,89 @@ def contact_submit(request):
         201: Lead created successfully
         400: Validation error
         429: Rate limit exceeded
+        500: Server error
     """
     # Check if rate limited
     was_limited = getattr(request, 'limited', False)
     if was_limited:
+        logger.warning(f"Rate limit exceeded for IP: {get_client_ip(request)}")
         return Response(
-            {'error': 'Слишком много запросов. Попробуйте позже.'},
+            {
+                'success': False,
+                'error': {
+                    'code': 429,
+                    'message': 'Слишком много запросов. Попробуйте позже.',
+                    'details': {}
+                }
+            },
             status=status.HTTP_429_TOO_MANY_REQUESTS
         )
     
-    # Create serializer with request data
-    serializer = LeadCreateSerializer(data=request.data)
-    
-    if serializer.is_valid():
-        # Save lead with additional metadata
-        lead = serializer.save(
-            ip_address=get_client_ip(request),
-            user_agent=get_user_agent(request),
-        )
+    try:
+        # Create serializer with request data
+        serializer = LeadCreateSerializer(data=request.data)
         
-        # Send notifications asynchronously (you can use Celery in production)
-        try:
-            send_lead_notification(lead)
-            send_auto_reply(lead)
-            send_telegram_notification(lead)
-        except Exception as e:
-            # Log error but don't fail the request
-            print(f"Notification error: {e}")
+        if serializer.is_valid():
+            # Save lead with additional metadata using atomic transaction
+            with transaction.atomic():
+                lead = serializer.save(
+                    ip_address=get_client_ip(request),
+                    user_agent=get_user_agent(request),
+                )
+            
+            # Send notifications asynchronously (you can use Celery in production)
+            # Don't fail the request if notifications fail
+            try:
+                send_lead_notification(lead)
+            except Exception as e:
+                logger.error(f"Failed to send email notification for lead {lead.id}: {str(e)}")
+            
+            try:
+                send_auto_reply(lead)
+            except Exception as e:
+                logger.error(f"Failed to send auto-reply for lead {lead.id}: {str(e)}")
+            
+            try:
+                send_telegram_notification(lead)
+            except Exception as e:
+                logger.error(f"Failed to send Telegram notification for lead {lead.id}: {str(e)}")
+            
+            logger.info(f"New lead created: {lead.id} from {lead.company}")
+            
+            return Response(
+                {
+                    'success': True,
+                    'message': 'Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.',
+                    'lead_id': lead.id
+                },
+                status=status.HTTP_201_CREATED
+            )
         
+        # Validation errors
+        logger.warning(f"Validation error in contact form: {serializer.errors}")
         return Response(
             {
-                'success': True,
-                'message': 'Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.',
-                'lead_id': lead.id
+                'success': False,
+                'error': {
+                    'code': 400,
+                    'message': 'Ошибка валидации данных',
+                    'details': serializer.errors
+                }
             },
-            status=status.HTTP_201_CREATED
+            status=status.HTTP_400_BAD_REQUEST
         )
     
-    return Response(
-        {
-            'success': False,
-            'errors': serializer.errors
-        },
-        status=status.HTTP_400_BAD_REQUEST
-    )
+    except Exception as e:
+        # Unexpected server error
+        logger.error(f"Unexpected error in contact_submit: {str(e)}", exc_info=True)
+        return Response(
+            {
+                'success': False,
+                'error': {
+                    'code': 500,
+                    'message': 'Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.',
+                    'details': {}
+                }
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )

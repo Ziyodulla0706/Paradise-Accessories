@@ -1,0 +1,171 @@
+{
+  "common": {
+    "companyName": "Paradise Accessories",
+    "tagline": "Premium tags and labels for your brand",
+    "getQuote": "Get a quote",
+    "callUs": "Call us",
+    "learnMore": "Learn more",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "catalog": "Products",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": "Premium tags and labels for your brand",
+    "subtitle": "High precision printing, unique equipment and custom design. We work with clothing manufacturers across Central Asia.",
+    "cta": "Calculate cost",
+    "phone": "Call us"
+  },
+  "advantages": {
+    "title": "Why choose us",
+    "items": {
+      "quality": {
+        "title": "High quality",
+        "description": "We use only premium materials and modern equipment"
+      },
+      "speed": {
+        "title": "Fast delivery",
+        "description": "Production from 7 days, urgent orders from 3 days"
+      },
+      "design": {
+        "title": "Custom design",
+        "description": "We create unique solutions for each brand"
+      },
+      "experience": {
+        "title": "Experience",
+        "description": "Over 10 years in the market, working with major brands"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Fill out the form and we will contact you soon",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "phone": "Phone",
+      "email": "Email",
+      "productType": "Product type",
+      "quantity": "Quantity",
+      "message": "Message",
+      "file": "Attach file",
+      "submit": "Submit request",
+      "success": "Thank you! Your request has been received.",
+      "error": "An error occurred. Please try again later."
+    },
+    "productTypes": {
+      "woven": "Woven labels",
+      "printed": "Printed labels",
+      "hangTags": "Hang tags",
+      "stickers": "Stickers",
+      "other": "Other"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Paradise Accessories — your reliable partner in premium clothing accessories manufacturing",
+    "history": {
+      "title": "Our History",
+      "text": "Paradise Accessories was founded with the goal of providing clothing manufacturers with high-quality tags, labels, and accessories. Over the years, we have established ourselves as a reliable partner for brands across Central Asia."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "We strive to help every brand create a unique identity through quality accessories. Our goal is to provide products that are not only functional but also reflect your brand values."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "quality": {
+          "title": "Quality",
+          "description": "We use only the best materials and modern equipment"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly develop and implement new technologies"
+        },
+        "partnership": {
+          "title": "Partnership",
+          "description": "We build long-term relationships with clients"
+        },
+        "reliability": {
+          "title": "Reliability",
+          "description": "We meet deadlines and fulfill commitments"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to start cooperation?",
+      "subtitle": "Contact us and we will discuss your project"
+    }
+  },
+  "catalog": {
+    "title": "Our Products",
+    "subtitle": "Wide range of tags, labels and accessories for your brand",
+    "categories": {
+      "woven": "Woven Labels",
+      "printed": "Printed Labels",
+      "hangTags": "Hang Tags",
+      "stickers": "Stickers",
+      "packaging": "Packaging"
+    },
+    "filter": {
+      "all": "All Categories",
+      "featured": "Featured"
+    },
+    "viewDetails": "View Details",
+    "noProducts": "No products found"
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Examples of our work for various brands",
+    "filter": {
+      "all": "All Works",
+      "woven": "Woven Labels",
+      "printed": "Printed Labels",
+      "hangTags": "Hang Tags",
+      "stickers": "Stickers",
+      "packaging": "Packaging"
+    },
+    "viewProject": "View Project",
+    "noItems": "No items found"
+  },
+  "pricing": {
+    "title": "Pricing & Rates",
+    "subtitle": "Transparent pricing for all types of orders",
+    "note": "Prices are approximate. Exact cost is calculated individually based on volume, design complexity and materials.",
+    "requestQuote": "Request a Quote",
+    "factors": {
+      "title": "What Affects the Price",
+      "items": {
+        "quantity": {
+          "title": "Quantity",
+          "description": "The larger the run, the lower the price per unit"
+        },
+        "material": {
+          "title": "Material",
+          "description": "Different materials have different costs"
+        },
+        "design": {
+          "title": "Design Complexity",
+          "description": "Complex designs require more time and resources"
+        },
+        "urgency": {
+          "title": "Urgency",
+          "description": "Rush orders may cost more"
+        }
+      }
+    },
+    "contactForPrice": "Contact us to calculate the exact cost of your order",
+    "cta": {
+      "title": "Ready to start cooperation?",
+      "subtitle": "Fill out the form and we will calculate the exact cost of your order"
+    }
+  }
+}

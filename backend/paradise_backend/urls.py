@@ -9,6 +9,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     
+    # Health check endpoint
+    path('api/health/', include('core.urls')),
+    
     # API endpoints
     path('api/leads/', include('leads.urls')),
     path('api/analytics/', include('analytics.urls')),

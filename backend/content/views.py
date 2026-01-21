@@ -18,13 +18,16 @@ class PortfolioItemViewSet(viewsets.ReadOnlyModelViewSet):
     API для просмотра элементов портфолио.
     Только публичные опубликованные элементы.
     """
-    queryset = PortfolioItem.objects.filter(is_published=True)
     serializer_class = PortfolioItemSerializer
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     filterset_fields = ['category']
     ordering_fields = ['order', 'created_at']
     ordering = ['order', '-created_at']
+    
+    def get_queryset(self):
+        """Optimize queryset for published items only."""
+        return PortfolioItem.objects.filter(is_published=True).order_by('order', '-created_at')
     
     def get_serializer_context(self):
         """Передать язык в serializer."""
@@ -40,7 +43,6 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     API для просмотра продуктов.
     Список и детали опубликованных продуктов.
     """
-    queryset = Product.objects.filter(is_published=True)
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['category', 'is_featured']
@@ -48,6 +50,12 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     ordering_fields = ['order', 'created_at']
     ordering = ['order', '-created_at']
     lookup_field = 'slug'
+    
+    def get_queryset(self):
+        """Optimize queryset with prefetch_related for images."""
+        return Product.objects.filter(
+            is_published=True
+        ).prefetch_related('images').order_by('order', '-created_at')
     
     def get_serializer_class(self):
         """Использовать разные serializers для списка и детальной страницы."""

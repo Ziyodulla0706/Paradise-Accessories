@@ -1,0 +1,171 @@
+{
+  "common": {
+    "companyName": "Paradise Accessories",
+    "tagline": "Brendingiz uchun premium yorliq va etiketlar",
+    "getQuote": "Narxni hisoblash",
+    "callUs": "Bizga qo'ng'iroq qiling",
+    "learnMore": "Ko'proq ma'lumot",
+    "contact": "Aloqa",
+    "menu": "Menyu",
+    "close": "Yopish"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Kompaniya haqida",
+    "catalog": "Mahsulotlar",
+    "portfolio": "Portfolio",
+    "pricing": "Narxlar",
+    "contacts": "Kontaktlar"
+  },
+  "hero": {
+    "title": "Brendingiz uchun premium yorliq va etiketlar",
+    "subtitle": "Yuqori aniqlikdagi bosib chiqarish, noyob uskunalar va individual dizayn. Markaziy Osiyo bo'ylab kiyim ishlab chiqaruvchilar bilan ishlaymiz.",
+    "cta": "Narxni hisoblash",
+    "phone": "Bizga qo'ng'iroq qiling"
+  },
+  "advantages": {
+    "title": "Nima uchun bizni tanlashadi",
+    "items": {
+      "quality": {
+        "title": "Yuqori sifat",
+        "description": "Faqat premium materiallar va zamonaviy uskunalardan foydalanamiz"
+      },
+      "speed": {
+        "title": "Tez yetkazib berish",
+        "description": "Ishlab chiqarish 7 kundan, shoshilinch buyurtmalar 3 kundan"
+      },
+      "design": {
+        "title": "Individual dizayn",
+        "description": "Har bir brend uchun noyob yechimlar yaratamiz"
+      },
+      "experience": {
+        "title": "Tajriba",
+        "description": "Bo'zorda 10 yildan ortiq, yirik brendlar bilan ishlaymiz"
+      }
+    }
+  },
+  "contact": {
+    "title": "Biz bilan bog'laning",
+    "subtitle": "Formani to'ldiring va biz tez orada siz bilan bog'lanamiz",
+    "form": {
+      "name": "Ism",
+      "company": "Kompaniya",
+      "phone": "Telefon",
+      "email": "Email",
+      "productType": "Mahsulot turi",
+      "quantity": "Miqdor",
+      "message": "Xabar",
+      "file": "Fayl qo'shing",
+      "submit": "So'rov yuborish",
+      "success": "Rahmat! So'rovingiz qabul qilindi.",
+      "error": "Xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring."
+    },
+    "productTypes": {
+      "woven": "Tikilgan etiketlar",
+      "printed": "Bosma etiketlar",
+      "hangTags": "Osiladigan yorliqlar",
+      "stickers": "Stikerkalar",
+      "other": "Boshqa"
+    }
+  },
+  "about": {
+    "title": "Kompaniya haqida",
+    "subtitle": "Paradise Accessories — kiyim aksessuarlari ishlab chiqarishda ishonchli hamkoringiz",
+    "history": {
+      "title": "Bizning tarix",
+      "text": "Paradise Accessories yuqori sifatli yorliq, etiket va aksessuarlar taqdim etish maqsadida tashkil etilgan. Yillar davomida biz Markaziy Osiyo bo'ylab brendlar uchun ishonchli hamkor sifatida o'zimizni ko'rsatdik."
+    },
+    "mission": {
+      "title": "Bizning missiya",
+      "text": "Biz har bir brendga sifatli aksessuarlar orqali noyob identitet yaratishga yordam berishga intilamiz. Bizning maqsadimiz — nafaqat funksional, balki brendingizning qadriyatlarini ham aks ettiruvchi mahsulotlarni taqdim etish."
+    },
+    "values": {
+      "title": "Bizning qadriyatlar",
+      "items": {
+        "quality": {
+          "title": "Sifat",
+          "description": "Faqat eng yaxshi materiallar va zamonaviy uskunalardan foydalanamiz"
+        },
+        "innovation": {
+          "title": "Innovatsiya",
+          "description": "Doimiy rivojlanamiz va yangi texnologiyalarni joriy qilamiz"
+        },
+        "partnership": {
+          "title": "Hamkorlik",
+          "description": "Mijozlar bilan uzoq muddatli munosabatlarni quramiz"
+        },
+        "reliability": {
+          "title": "Ishonchlilik",
+          "description": "Muddatlarni bajaramiz va majburiyatlarni to'liq amalga oshiramiz"
+        }
+      }
+    },
+    "cta": {
+      "title": "Hamkorlikni boshlashga tayyormisiz?",
+      "subtitle": "Biz bilan bog'laning va biz loyihangizni muhokama qilamiz"
+    }
+  },
+  "catalog": {
+    "title": "Bizning mahsulotlar",
+    "subtitle": "Brendingiz uchun keng assortimentdagi yorliq, etiket va aksessuarlar",
+    "categories": {
+      "woven": "Tikilgan etiketlar",
+      "printed": "Bosma etiketlar",
+      "hangTags": "Osiladigan yorliqlar",
+      "stickers": "Stikerkalar",
+      "packaging": "Qadoqlash"
+    },
+    "filter": {
+      "all": "Barcha kategoriyalar",
+      "featured": "Tanlangan"
+    },
+    "viewDetails": "Batafsil",
+    "noProducts": "Mahsulotlar topilmadi"
+  },
+  "portfolio": {
+    "title": "Bizning portfolio",
+    "subtitle": "Turli brendlar uchun ishlarimizning namunalari",
+    "filter": {
+      "all": "Barcha ishlar",
+      "woven": "Tikilgan etiketlar",
+      "printed": "Bosma etiketlar",
+      "hangTags": "Osiladigan yorliqlar",
+      "stickers": "Stikerkalar",
+      "packaging": "Qadoqlash"
+    },
+    "viewProject": "Loyihani ko'rish",
+    "noItems": "Ishlar topilmadi"
+  },
+  "pricing": {
+    "title": "Narxlar va tariflar",
+    "subtitle": "Barcha turdagi buyurtmalar uchun shaffof narxlash",
+    "note": "Narxlar taxminiy. Aniq narx hajm, dizayn murakkabligi va materiallarga qarab individual hisoblanadi.",
+    "requestQuote": "Hisob-kitob so'rash",
+    "factors": {
+      "title": "Narxga nima ta'sir qiladi",
+      "items": {
+        "quantity": {
+          "title": "Miqdor",
+          "description": "Tiraj qancha katta bo'lsa, birlik narxi shuncha past"
+        },
+        "material": {
+          "title": "Material",
+          "description": "Turli materiallar turli narxga ega"
+        },
+        "design": {
+          "title": "Dizayn murakkabligi",
+          "description": "Murakkab dizaynlar ko'proq vaqt va resurs talab qiladi"
+        },
+        "urgency": {
+          "title": "Shoshilinchlik",
+          "description": "Shoshilinch buyurtmalar qimmatroq bo'lishi mumkin"
+        }
+      }
+    },
+    "contactForPrice": "Buyurtmangizning aniq narxini hisoblash uchun biz bilan bog'laning",
+    "cta": {
+      "title": "Hamkorlikni boshlashga tayyormisiz?",
+      "subtitle": "Formani to'ldiring va biz buyurtmangizning aniq narxini hisoblaymiz"
+    }
+  }
+}
